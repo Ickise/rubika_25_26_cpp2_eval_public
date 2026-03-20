@@ -1,8 +1,14 @@
 - What is the purpose of a forward declaration?
-
+A forward declaration declares a nested subprogram but does not define it, we need to define it later. It's used to reduce the number of header inclusion while still being able to use the variables, functions, etc. of the called class;
+We call it in the .h file in order to don't open this file by #include, this decrease the number of operating system calls.
+Reduce the recompilation if the forward declared class is modified. 
 
 - What are the differences between the stack and the heap?
-
+The stack allocation and deallocation are automatically done by the compiler but in heap we need to do it by ourselves, manually.
+Handling heap memory is more expensive than managing stack memory. 
+Stack is more prone to memory problems whereas the main problem of heap memory is fragmentation. 
+It's more easier to access the stack because it's a small region of memory and it's cache friendly, the heap is dispersed. 
+Stack isn't flexible, memory size allocated cannot be changed but the heap is flexible, the allocated memory is modifiable. 
 
 - What is the difference between a variable passsed by copy, by reference or by pointer?
 
