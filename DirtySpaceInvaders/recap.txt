@@ -3,3 +3,15 @@ Exemple
 Problème : J'ai faim
 Cause : Je n'ai pas mangé
 Solution : Je mange
+
+Problème : Lorsque nous lançons le build, il y a une erreur.
+Cause : Je pense que Cause avec un "s" serai plus adapté.
+Solution : Avoir jusque l'année prochaine pour rendre l'examen.
+
+Problème : Toujours le même
+Cause : Lorsque nous appliquons à la pos d'Alien des coordonnées, nous appliquions deux fois à .x et non pas à .x et .y
+Solution : Juste remplacer la duplication par a.pos.y
+
+Problème : Le DecreaseHealth() renvoyé un bool.
+Cause : Le programmeur.
+Solution : Renvoyer le programmeur et aussi un int dans la fonction. Il faut ensuite coder la fonction pour réellement diminuer les points de vie de l'alien, avoir un return 0 si les PV sont déjà à 0 (pourquoi pas détruire l'objet) etc...

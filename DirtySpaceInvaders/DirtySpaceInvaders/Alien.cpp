@@ -5,6 +5,7 @@
 #include "PlayField.h"
 #include "Random.h"
 
+#include <algorithm>
 #include <string>
 
 Alien::Alien() 
@@ -19,10 +20,11 @@ Alien::~Alien()
 	delete m_objType;
 }
 
-bool Alien::DecreaseHealth()
+int Alien::DecreaseHealth(int damage)
 {
-	health -= 1.f;
-	return health <= 0;
+	health -= damage;
+	health = std::max(health, 0.f);
+	return static_cast<int>(health);
 }
 
 void Alien::Update(PlayField& world)

@@ -24,8 +24,8 @@ int main()
 	for (int k = 0; k < 20; k++)
 	{
 		Alien& a = *(new Alien);
-		a.pos.x = (float)xCoord(rGen);
-		a.pos.x = (float)yCoord(rGen);
+		a.pos.x = static_cast<float>(xCoord(rGen));
+		a.pos.y = static_cast<float>(yCoord(rGen));
 		world.AddObject(&a);
 	}
 
