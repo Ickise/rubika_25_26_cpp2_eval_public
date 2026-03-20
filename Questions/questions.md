@@ -133,7 +133,7 @@ CONTAINER<int> data = { 1, 2, 3, 4, 5 };
 
 data.Insert(data.begin(), 0);
 ```
-
+We can use std::deque because it's support fast front insertion and allows random access like a vector.
 
 - In the following code, which container should be used and why?
 ```cpp
