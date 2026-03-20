@@ -51,7 +51,7 @@ int* p = &x;
 *p = 20;
 std::cout << x << std::endl;
 ```
-
+The following code display 20.
 
 - What is the following code output?
 ```cpp
@@ -59,7 +59,7 @@ int* p = nullptr;
 *p = 5;
 std::cout << p << std::endl;
 ```
-
+A crash.
 
 - What does the following code display?
 ```cpp
@@ -76,6 +76,7 @@ public:
 A* obj = new B();
 obj->f();
 ``` 
+The output is B.
 
 - Does that code works?
 ```cpp
@@ -95,7 +96,7 @@ a->f();
 A* b = new B;
 b->f();
 ``` 
-
+"virtual void f() = 0" miss a ";" and we can't create A, it's abstract class.
 
 - What is the number of loop that program will execute?
 ``` cpp
@@ -105,7 +106,7 @@ for (unsigned char id = 0; id < 2 * nbHalfLoop; id++)
 cout << id;
 }
 ```
-
+Infinite loop.
 
 - In the following code, which container should be used and why?
 ```cpp
@@ -122,7 +123,7 @@ bool exists(int value) {
     return false;
 }
 ```
-
+std::vector given that it stores elements contiguously in memory. The push_back is efficient and vector is cache-friendly with fast iteration.
 
 - In the following code, which container should be used and why?
 ```cpp
