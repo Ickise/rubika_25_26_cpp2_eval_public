@@ -27,19 +27,22 @@ The last, linking combines object files and libraries to produce the .exe.
 
 - What is a smart-pointer? What problem do they solve? What problem do they bring?
 A smart-pointer manage dynamically allocated memory automatically, it manages the lifetime of this.
-They solve memory leaks with a proper deallocation by releasing the memory when the pointer goes out of scope.
+They ensure proper deallocation by releasing the memory when the pointer goes out of scope. They prevent memory leaks. They reduce the manual new/delete errors.
+They bring some problems like risk of cyclic references.
 
 - What is the problem that multi-threading try to solve?
-
+Multi-threading try to solve a problem of performance and responsiveness issues like they allow programs to run multiple tasks at the same time in different cores. 
+The multi-threading helps us to run faster and more efficiently programs by doing work in parallel. 
 
 - Give at least two synchronization types that are used by multi-threading programs? What are their purpose?
-
+First, with have the mutex which ensures only one thread to access a shared data at a time and prevents race conditions. 
+The second one is atomic variables wich ensure thread-safe operations without any locks.
 
 - What is a Spin Lock?
-
+It's a type of lock that causes a thread repeatedly checks until the lock becomes available.
 
 - What is a Dead Lock?
-
+A Dead lock it's a type of lock when two or more threads are waiting indefinitely for resources held by another threads.
 
 - What does the following code display?
 ```cpp
