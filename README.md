@@ -3,8 +3,8 @@
 1. [Information](#information)
 2. [Theorical questions](#theorical-questions)
 3. [Debugging](#debugging)
-4. [Xml Parsing](#xml-parser)
-5. [Trees](#trees)
+4. [Islands](#islands)
+4. [Development]
 
 ## Information
 
@@ -23,7 +23,7 @@
 ### Submit quality
 
 - The way you will deliver your submission is also evaluated (even if it is not the main part of the rating).
-- You must submit a `FIRSTNAME_LASTNAME.zip` file in the [drive](https://drive.google.com/drive/folders/1G_J7wIqgDNXLhvD_5eTI5l38WtFnAsii?usp=sharing)
+- You must submit a `FIRSTNAME_LASTNAME.zip` file in the [drive](https://drive.google.com/drive/folders/1tjb82ApAw2-n3d2EqMAIx7b7sjomUI81?usp=drive_link)
 - Late submission will be penalized
 - Every unecessary files must be removed from your archive
  * `git` files
@@ -35,7 +35,7 @@
 
 ### Theorical questions
 *Folder* : **Questions**\
-*Estimated maximal time* : 10 minutes
+*Estimated maximal time* : 20 minutes
 
 You will find in this folder a markdown file which contains several questions. You must answer those questions directly in the file.
 
@@ -66,15 +66,25 @@ You are free to fix the program in the way you want (the clearer the better) but
 *Folder* : **Islands**\
 *Estimated maximal time* : 20 minutes
 
-The purpose of this exercise is to parse a `sounds.xml` file and store its content in a map to retrieve the data using the sound key. You will find more information directly in the code as comments.
+To analyze satellite images, a geospatial company studies maps of remote ocean regions.
+Each map is represented as a grid where land and water are identified.
+In this exercice, you have to determine how many separate islands are present on a given map.
+The map is represented as a 2D grid of characters :
+	- '1' represents land
+	- '0' represents water
+
+An island is defined as a group of connected land cells.
+Cells are considered connected if they are adjacent horizontally or vertically(not diagonally).
+The grid is surrounded by water.
 
 **The `main` function is the only one that must not contain any code because it will be replaced. All code in that function will be lost. However, you can use it as a sandbox, you are free to use the way you want while developing.**
 
-In this exercise, you have to implement, at least, those two functions:
-- XmlCache::Parse
-- XmlCache::GetSound
+### Development
+*Folder* : **DirtySpaceInvaders**\
 
-You are free to implement it the way you want:
-- You can follow the guidelines in comments (if you pick that solution, you will need to only modify the `XmlCache.cpp` file) which help you implementing.
-- Ignore the last statement and implement it the way you want. You only need to implement the function mentionned above.
+This exercice is a "going further" exercice that I advise you to look at the end. It must be done after the [Debugging exercice](#debugging) has been completed.
 
+Now the initial program has been fixed, it is time to add new features. Here is a small list of ideas but you can be creative and develop any new features.
+- Adding rock which block a laser shot (ally? enemy?)
+- Collision between lasers
+- Big alien which has more life points
