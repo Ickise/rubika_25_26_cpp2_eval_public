@@ -11,16 +11,23 @@ It's more easier to access the stack because it's a small region of memory and i
 Stack isn't flexible, memory size allocated cannot be changed but the heap is flexible, the allocated memory is modifiable. 
 
 - What is the difference between a variable passsed by copy, by reference or by pointer?
-
+If we pass by copy a variable, it's a copy of the variable and when we change it inside the function, that will don't affect the original. 
+If we pass by reference, the function gets an alias to the original variable and the several changes affect the original.
+When we pass by pointer the function will get the adress of the variable. We need to use "*" to modify or access it. The changes will affect the original too. 
 
 - What is a pure virual class?
-
+A virtual class (abstract class) will have at least one pure virtual function with no implementation (declared using = 0). 
+We can't instantiate this class, we can inherite from it and the heirs must override the pure virtual function to be usable.
 
 - What are the different phases of the compilation process?
-
+We have preprocessing, compilation, assembly and linking. The first (preprocessing) handles the different #include, #define, #ifdef, #ifndef and macros, this prepare the source code for compilation. 
+The second part, compilation, will convert the preprocessed code into assembly code and checks for syntax errors, if it encounters any issues, the program is stop and report them.
+The third part, assembly, will translate the assembly code generate by compilation into an object file (.o/.obj).
+The last, linking combines object files and libraries to produce the .exe.
 
 - What is a smart-pointer? What problem do they solve? What problem do they bring?
-
+A smart-pointer manage dynamically allocated memory automatically, it manages the lifetime of this.
+They solve memory leaks with a proper deallocation by releasing the memory when the pointer goes out of scope.
 
 - What is the problem that multi-threading try to solve?
 
