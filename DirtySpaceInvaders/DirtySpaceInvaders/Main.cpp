@@ -23,17 +23,17 @@ int main()
 	// Populate aliens
 	for (int k = 0; k < 20; k++)
 	{
-		Alien& a = *(new Alien);
-		a.pos.x = static_cast<float>(xCoord(rGen));
-		a.pos.y = static_cast<float>(yCoord(rGen));
-		world.AddObject(&a);
+		Alien* a = (new Alien);
+		a->pos.x = (float)xCoord(rGen);
+		a->pos.y = (float)yCoord(rGen);
+		world.AddObject(a);
 	}
 
 	// Add player
 	PlayerShip* p = new PlayerShip;
 	p->pos = Vector2D(40, 27);
 	world.AddObject(p);
-
+	
 	for (int i = 0; i < 100; i++)
 	{
 		world.Update();

@@ -14,7 +14,7 @@ private:
 	float direction = 1.f;
 	float velocity = 0.5f;
 
-	int DecreaseHealth(int damage);
+	bool DecreaseHealth() override;
 
 	void Update(PlayField& world) override;
 };

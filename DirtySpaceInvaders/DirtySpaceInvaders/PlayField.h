@@ -9,28 +9,28 @@ class Input;
 class PlayField
 {
 private:
-	std::vector<GameObject*> gameObjects;
+    std::vector<GameObject*> gameObjects;
 
 public:
-	Input* controllerInput;
-	Vector2D bounds;
+    Input* controllerInput;
+    Vector2D bounds;
 
-	// Number of available active laser slots for aliens and player
-	int AlienLasers = 10;
-	int PlayerLasers = 4;
+    // Number of available active laser slots for aliens and player
+    int AlienLasers = 10;
+    int PlayerLasers = 4;
 
-	PlayField(Vector2D iBounds) : bounds(iBounds) {};
-	const std::vector<GameObject*>& GameObjects() { return gameObjects; }
+    PlayField(const Vector2D& iBounds);
+    const std::vector<GameObject*>& GameObjects() { return gameObjects; }
 
-	void Update();
+    void Update();
 
-	GameObject* GetPlayerObject();
+    GameObject* GetPlayerObject();
 
-	void SpawnLaser(GameObject* newObj);
+    void SpawnLaser(GameObject* newObj);
 
-	void DespawnLaser(GameObject* newObj);
+    void DespawnLaser(GameObject* newObj);
 
-	void AddObject(GameObject* newObj);
+    void AddObject(GameObject* newObj);
 
-	void RemoveObject(GameObject* newObj);
+    void RemoveObject(GameObject* newObj);
 };

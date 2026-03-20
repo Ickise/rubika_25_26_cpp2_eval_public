@@ -5,7 +5,6 @@
 #include "PlayField.h"
 #include "Random.h"
 
-#include <algorithm>
 #include <string>
 
 Alien::Alien() 
@@ -17,14 +16,13 @@ Alien::Alien()
 
 Alien::~Alien()
 {
-	delete m_objType;
+	delete[] m_objType;
 }
 
-int Alien::DecreaseHealth(int damage)
+bool Alien::DecreaseHealth()
 {
-	health -= damage;
-	health = std::max(health, 0.f);
-	return static_cast<int>(health);
+	health -= 1.f;
+	return health <= 0;
 }
 
 void Alien::Update(PlayField& world)
@@ -52,7 +50,7 @@ void Alien::Update(PlayField& world)
 	if (fireRate(rGen) < 0.5 && world.AlienLasers > 0)
 	{
 		//Spawn laser
-		GameObject& newLaser = *(new AlienLaser);
+		AlienLaser& newLaser = *(new AlienLaser);
 		newLaser.pos = pos;
 		world.SpawnLaser(&newLaser);
 	}

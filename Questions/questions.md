@@ -123,7 +123,7 @@ bool exists(int value) {
     return false;
 }
 ```
-std::vector given that it stores elements contiguously in memory. The push_back is efficient and vector is cache-friendly with fast iteration.
+array
 
 - In the following code, which container should be used and why?
 ```cpp
@@ -133,7 +133,7 @@ CONTAINER<int> data = { 1, 2, 3, 4, 5 };
 
 data.Insert(data.begin(), 0);
 ```
-We can use std::deque because it's support fast front insertion and allows random access like a vector.
+We can use std::vector begiven that it stores elements contiguously in memory. The push_back is efficient and vector is cache-friendly with fast iteration.
 
 - In the following code, which container should be used and why?
 ```cpp
@@ -146,3 +146,4 @@ void add(int x) {
     data.Add(x);
 }
 ```
+unordered_set 
