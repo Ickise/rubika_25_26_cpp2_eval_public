@@ -123,7 +123,7 @@ bool exists(int value) {
     return false;
 }
 ```
-array
+Use array because we know the number of elements to store and we can access them by index, it's more efficient than linked list for this case.
 
 - In the following code, which container should be used and why?
 ```cpp
@@ -146,4 +146,4 @@ void add(int x) {
     data.Add(x);
 }
 ```
-unordered_set 
+Use unordered_set because efficient for checking existence of an element and it doesn't allow duplicates, so we can easily add elements without worrying about duplicates.
