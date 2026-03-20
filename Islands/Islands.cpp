@@ -1,5 +1,6 @@
 #include <vector>
 #include <iostream>
+#include <queue>
 
 /*
  * To analyze satellite images, a geospatial company studies maps of remote ocean regions.
@@ -17,38 +18,52 @@
  * Implement the function count_islands which returns the total number of islands present in the map.
  */
 
-static void depth_first_search(std::vector<std::vector<char>>& grid, size_t i, size_t j)
+static void breadth_first_search(std::vector<std::vector<char>>& grid, int start_i, int start_j)
 {
-    const size_t m = grid.size();
-    const size_t n = grid[0].size();
+    const int m = static_cast<int>(grid.size());
+    const int n = static_cast<int>(grid[0].size());
 
-    if (i >= m || j >= n || grid[i][j] != '1')
-        return;
+    std::queue<std::pair<int, int>> q;
+    q.emplace(start_i, start_j);
+    grid[start_i][start_j] = '0';
 
-    grid[i][j] = '0';
+    const std::vector<int> dir_i = {1, -1, 0, 0};
+    const std::vector<int> dir_j = {0, 0, 1, -1};
 
-    if (i + 1 < m) depth_first_search(grid, i + 1, j);
-    if (i > 0) depth_first_search(grid, i - 1, j);
-    if (j + 1 < n) depth_first_search(grid, i, j + 1);
-    if (j > 0) depth_first_search(grid, i, j - 1);
+    while (!q.empty())
+    {
+        int i = q.front().first;
+        int j = q.front().second;
+        q.pop();
+
+        for (int d = 0; d < 4; ++d)
+        {
+            int ni = i + dir_i[d];
+            int nj = j + dir_j[d];
+
+            if (ni >= 0 && ni < m && nj >= 0 && nj < n && grid[ni][nj] == '1')
+            {
+                grid[ni][nj] = '0';
+                q.emplace(ni, nj);
+            }
+        }
+    }
 }
 
 int count_islands(std::vector<std::vector<char>>& grid)
 {
     if (grid.empty()) return 0;
 
-    const size_t m = grid.size();
-    const size_t n = grid[0].size();
     int islands = 0;
 
-    for (size_t i = 0; i < m; i++)
+    for (int i = 0; i < static_cast<int>(grid.size()); ++i)
     {
-        for (size_t j = 0; j < n; j++)
+        for (int j = 0; j < static_cast<int>(grid[0].size()); ++j)
         {
             if (grid[i][j] == '1')
             {
                 islands++;
-                depth_first_search(grid, i, j);
+                breadth_first_search(grid, i, j);
             }
         }
     }
